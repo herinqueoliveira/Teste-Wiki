@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Wiki Serviços | Suporte</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js" defer></script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    if (window.pdfjsLib && pdfjsLib.GlobalWorkerOptions) {
+      pdfjsLib.GlobalWorkerOptions.workerSrc =
+        'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    }
+  });
+</script>
+</head>
+<body>
+<header>
+  <nav>
+    <div class="nav-left">
+      <a class="logo" href="/">Wiki Serviços | Suporte</a>
+    </div>
+    <div class="nav-center"></div>
+    <div class="nav-right">
+      <input id="searchInput" type="search" placeholder="Pesquisar..." aria-label="Pesquisar" />
+      <label for="docUpload" class="upload-btn">Anexar</label>
+      <input id="docUpload" type="file" accept=".md,.txt,.pdf,.docx" multiple hidden />
+      <button id="btnClear" class="upload-btn">Limpar</button>
+    </div>
+  </nav>
+</header>
+<section class="main__container">
+  <aside class="menu">
+   <div class="menu__uploads__title">Documentos</div>
+  <div id="uploadsList"></div>
+  <div id="menuEmpty" class="menu-empty" hidden>
+    📂 Nenhum documento ainda
+    <small>Clique em “Anexar”</small>
+  </div>
+
+  </aside>
+  <main class="conteudo" id="conteudo">
+    <h1>Bem-vindo ao Wiki Serviços</h1>
+    <p>Use o botão <strong>Anexar</strong> para enviar arquivos <code>.md</code>, <code>.txt</code>, <code>.pdf</code> ou <code>.docx</code>.</p>
+    <p>Ao anexar, o conteúdo já fica pronto e formatado (com imagens). Nada de editar.</p>
+    <p>Os arquivos ficam salvos no servidor local (Node.js + SQLite).</p>
+
+  </main>
+</section>
+<script src="script.js"></script>
+</body>
+</html>
