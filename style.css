@@ -600,3 +600,34 @@ nav {
   background: #232323;
   border-color: #3a3a3a;
 }
+
+/* =========================
+   TOAST NOTIFICATIONS
+========================= */
+#toast-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 9999;
+}
+
+.toast {
+  min-width: 250px;
+  padding: 12px 16px;
+  background: #333;
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  font-size: 14px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  border-left: 4px solid #777;
+}
+
+.toast-success { border-left-color: #2ecc71; }
+.toast-error { border-left-color: #e74c3c; }
+.toast-info { border-left-color: #3498db; }
+
